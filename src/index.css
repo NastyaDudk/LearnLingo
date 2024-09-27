@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('/public/fonts/Roboto-Medium.woff2') format('woff2'),
+      url('/public/fonts/Roboto-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/public/fonts/Roboto-Italic.woff2') format('woff2'),
+      url('/public/fonts/Roboto-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/public/fonts/Roboto-Bold.woff2') format('woff2'),
+      url('/public/fonts/Roboto-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/public/fonts/Roboto-Regular.woff2') format('woff2'),
+      url('/public/fonts/Roboto-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --animation-hover: all 400ms ease;
+  --dark-color: #121417;
+  --white-color: #ffffff;
+  --bg-lightblue: #f8f8f8;
+  --stat-textColor: rgba(18, 20, 23, 0.7);
+  --form-text: rgba(18, 20, 23, 0.8);
+  --gray-card: #8a8a89;
+  --price-color: #38cd3e;
+}
+
+[data-theme="theme1"] {
+  --accent-color: #F4C550;
+  --accent-light: #fbe9ba;
+  --icon-stopColor: #E7C885;
+  --bg-macbook: linear-gradient(180deg, #eeb055 0%, #d08f38 100%);
+}
+
+[data-theme="theme2"] {
+  --accent-color: #9FBAAE;
+  --accent-light: #CBDED3;
+  --icon-stopColor: #9EB9AD;
+  --bg-macbook: linear-gradient(180deg, #295761 0%, #183e49 100%);
+}
+
+[data-theme="theme3"] {
+  --accent-color: #9fb7ce;
+  --accent-light: #bfd6ea;
+  --icon-stopColor: #BFD6EA;
+  --bg-macbook: linear-gradient(180deg, #314b6e 0%, #1f385a 100%);
+}
+
+[data-theme="theme4"] {
+  --accent-color: #e0a39a;
+  --accent-light: #f2c0bd;
+  --icon-stopColor: #DFA299;
+  --bg-macbook: linear-gradient(180deg, #b03f3e 0%, #982a27 100%);
+}
+
+[data-theme="theme5"] {
+  --accent-color: #f0aa8d;
+  --accent-light: #f4c8ba;
+  --icon-stopColor: #EFA98C;
+  --bg-macbook: linear-gradient(180deg, #e17650 0%, #ca5b38 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.css-1u9des2-indicatorSeparator {
+  display: none;
+}
+
+.css-tj5bde-Svg {
+  fill: var(--dark-color);
+}
