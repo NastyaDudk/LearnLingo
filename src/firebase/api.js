@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { getDatabase, ref, set, child, get } from "firebase/database";
 import {
   createUserWithEmailAndPassword,
@@ -10,7 +9,7 @@ import {
 import { toast } from "react-toastify";
 import { auth } from "./firebase";
 
-// ======================== USER REGISTRATION
+// USER REGISTRATION
 export function whenUserRegister(dataForm) {
   const { name, email, password } = dataForm;
   createUserWithEmailAndPassword(auth, email, password)
@@ -27,7 +26,7 @@ export function whenUserRegister(dataForm) {
     .catch(() => toast.error("Email already in use!"));
 }
 
-// ======================== USER LOGIN
+// USER LOGIN
 export function whenUserLogin(dataForm, setShowLogin) {
   const { email, password } = dataForm;
   signInWithEmailAndPassword(auth, email, password)
@@ -43,13 +42,13 @@ export function whenUserLogin(dataForm, setShowLogin) {
     .catch(() => toast.error("Invalid credentials"));
 }
 
-// ======================== USER LOGOUT
+//USER LOGOUT
 export function whenLogOut() {
   auth.signOut();
   localStorage.removeItem("isLogin");
 }
 
-//========================= GET USER DATA
+//GET USER DATA
 export function getUserData() {
   const user = auth.currentUser;
   if (user !== null) {
@@ -63,7 +62,7 @@ export function getUserData() {
   }
 }
 
-//========================= GET ALL TEACHERS FROM REAL-TIME DATABASE
+// GET ALL TEACHERS FROM REAL-TIME DATABASE
 export async function getAllTeachers(teachersPerPage) {
   try {
     const dbRef = ref(getDatabase());
@@ -75,8 +74,7 @@ export async function getAllTeachers(teachersPerPage) {
     console.error(error);
   }
 }
-
-//========================= ADD TEACHER TO FAVORITES
+//  ADD TEACHER TO FAVORITES
 export async function addTeacher(objectTeacher) {
   const userData = getUserData();
   const userId = userData?.uid;
@@ -91,7 +89,7 @@ export async function addTeacher(objectTeacher) {
   set(ref(db, `users/${userId}/teachers`), teachersArray);
 }
 
-//========================= REMOVE TEACHER FROM FAVORITES
+//REMOVE TEACHER FROM FAVORITES
 export async function removeTeacher(teacherID) {
   const userData = getUserData();
   const userId = userData?.uid;
@@ -108,7 +106,7 @@ export async function removeTeacher(teacherID) {
   }
 }
 
-//========================= GET ALL FAVORITES TEACHERS FROM REAL-TIME DATABASE
+//GET ALL FAVORITES TEACHERS FROM REAL-TIME DATABASE
 export async function getFavorites() {
   const userData = getUserData();
   const userId = userData?.uid;
@@ -121,7 +119,7 @@ export async function getFavorites() {
   }
 }
 
-//========================= GET ALL TEACHERS BY LANGUAGES
+// GET ALL TEACHERS BY LANGUAGES
 export async function getTeachersByLanguage(language) {
   try {
     const dbRef = ref(getDatabase());
@@ -136,7 +134,7 @@ export async function getTeachersByLanguage(language) {
   }
 }
 
-//========================= GET ALL TEACHERS BY LEVELS
+//GET ALL TEACHERS BY LEVELS
 export async function getTeachersByLvl(lvl) {
   try {
     const dbRef = ref(getDatabase());
@@ -151,7 +149,7 @@ export async function getTeachersByLvl(lvl) {
   }
 }
 
-//========================= GET ALL TEACHERS BY PRICE
+//GET ALL TEACHERS BY PRICE
 export async function getTeachersByPrice(price) {
   try {
     const dbRef = ref(getDatabase());
@@ -166,7 +164,7 @@ export async function getTeachersByPrice(price) {
   }
 }
 
-//========================= GET ALL TEACHERS BY LANGUAGE, LEVEL AND PRICE
+//GET ALL TEACHERS BY LANGUAGE, LEVEL AND PRICE
 export async function getAllFiltered(language, lvl, price) {
   try {
     if (language && !lvl && !price) {
@@ -211,10 +209,14 @@ export async function getAllFiltered(language, lvl, price) {
       let teachersPrice = await getTeachersByPrice(price);
       const intersectedTeachers = teachersLang.filter((teacherLang) => {
         return teachersLvl.some((teacherLvl) => {
-          return teachersPrice.some((teacherPrice) => teacherPrice.id === teacherLvl.id && teacherLvl.id === teacherLang.id);
+          return teachersPrice.some(
+            (teacherPrice) =>
+              teacherPrice.id === teacherLvl.id &&
+              teacherLvl.id === teacherLang.id
+          );
         });
       });
-      
+
       return intersectedTeachers;
     }
   } catch (error) {

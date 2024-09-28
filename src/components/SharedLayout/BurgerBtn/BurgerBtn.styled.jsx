@@ -1,4 +1,3 @@
-// @ts-nocheck
 import styled from "styled-components";
 
 export const BurgerBtnContainer = styled.div`
@@ -22,9 +21,9 @@ export const Button = styled.button`
 export const BtnIcon = styled.div`
     width: 37px;
     height: 2px;
-    background-color: ${({isshowmobile}) => (isshowmobile === "true" ? "transparent" : "var(--dark-color)")};
+    background-color: ${({isShowMobile}) => (isShowMobile === "true" ? "transparent" : "var(--dark-color)")};
     transition: var(--animation-hover);
-    transform: ${({isshowmobile}) => (isshowmobile === "true" && "translateX(-50px)")};
+    transform: ${({isShowMobile}) => (isShowMobile === "true" && "translateX(-50px)")};
 
     &::before,
     &::after {
@@ -41,10 +40,10 @@ export const BtnIcon = styled.div`
     }
 
     &::before {
-      transform: ${({isshowmobile}) => (isshowmobile === "true" ? " rotate(45deg) translate(35px, -35px)" : "translateY(-6px)")};
+      transform: ${({isShowMobile}) => (isShowMobile === "true" ? " rotate(45deg) translate(35px, -35px)" : "translateY(-6px)")};
     }
 
     &::after {
-      transform: ${({isshowmobile}) => (isshowmobile === "true" ? " rotate(-45deg) translate(35px, 35px)" : "translateY(6px)")};
+      transform: ${({isShowMobile}) => (isShowMobile === "true" ? " rotate(-45deg) translate(35px, 35px)" : "translateY(6px)")};
     }
-`
+`;
