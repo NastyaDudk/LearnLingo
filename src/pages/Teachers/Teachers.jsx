@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState, useEffect } from "react";
 import ListTeachers from "../../components/Teachers/ListTeachers/ListTeachers";
 import SearchBar from "../../components/Teachers/SearchBar/SearchBar";
@@ -6,12 +5,11 @@ import { getAllFiltered } from "../../firebase/api";
 import { PageCont, PageTeachers } from "./Teachers.styled";
 
 const Teachers = () => {
-  // local state for values of search selects
   const [language, setLanguage] = useState(null);
   const [lvl, setLvl] = useState(null);
   const [price, setPrice] = useState(null);
 
-  // local state for filtered teachers
+
   const [filtered, setFiltered] = useState(null);
 
   useEffect(() => {

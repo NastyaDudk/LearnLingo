@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from "react";
 import { InfoTeacher, Paragraph, TitleForm } from "./BookForm.styled";
 import FormUser from "./FormUser/FormUser";

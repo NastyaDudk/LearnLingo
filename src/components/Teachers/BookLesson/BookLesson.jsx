@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useEffect } from "react";
 import ModalBookLesson from "../ModalBookLesson/ModalBookLesson";
 import BookForm from "../BookForm/BookForm";

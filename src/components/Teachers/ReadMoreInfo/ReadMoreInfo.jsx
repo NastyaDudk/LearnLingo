@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react'
 import { AddInfoContainer } from './ReadMoreInfo.styled'
 import Reviews from './Reviews/Reviews'

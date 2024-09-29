@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useEffect, useState } from "react";
 import TeacherItem from "../TeacherItem/TeacherItem";
 import { getAllTeachers } from "../../../firebase/api";

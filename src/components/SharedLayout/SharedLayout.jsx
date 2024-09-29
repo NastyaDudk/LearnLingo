@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { Suspense, useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { Outlet, useLocation } from "react-router-dom";

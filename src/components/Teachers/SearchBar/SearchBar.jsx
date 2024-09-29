@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react'
 import SelectLevel from './SelectLevel/SelectLevel'
 import SelectLanguage from './SelectLanguage/SelectLanguage'

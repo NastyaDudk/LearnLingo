@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useRef } from "react";
 import sprite from "../../icons/icons.svg";
 import { Backdrop, CloseBtn, FormModal } from "./Modal.styled";

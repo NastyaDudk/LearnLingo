@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from "react";
 import { BookBtn } from "./BookLessonBtn.styled";
 import { toast } from "react-toastify";
