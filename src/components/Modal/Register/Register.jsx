@@ -56,12 +56,12 @@ const Register = ({ setShowRegister }) => {
       >
           <StyledForm>
             <StyledField
-              type="text"
-              name="name"
-              placeholder="Name"
-              pattern="^[A-Za-z\s]{1,24}$"
-              required
-              aria-label="Input for typing your name"
+            type="text"
+            name="name"
+            placeholder="Name"
+            pattern="^[A-Za-zА-ЯҐЄІЇа-яґєії\s]{1,24}$"
+            required
+            aria-label="Input for typing your name"
             />
             <StyledError name="name" component="div" />
             
