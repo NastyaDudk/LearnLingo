@@ -45,7 +45,7 @@ const FavoriteItem = ({ teach, setFavorites, favorites }) => {
 
   useEffect(() => {
     if(favoritesArray) {
-      console.log(favoritesArray);
+    
       setFavorites(favoritesArray);
     }
   }, [favoritesArray, setFavorites])

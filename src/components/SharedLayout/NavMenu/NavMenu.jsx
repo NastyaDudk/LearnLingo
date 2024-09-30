@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from "react";
 import ColorPicker from "../ColorPicker/ColorPicker";
 import { NavMenuList, NavigationLink } from "./NavMenu.styled";
