@@ -1,5 +1,4 @@
-
-import React, { lazy } from "react";
+import React, { lazy, useEffect } from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import SharedLayout from "./SharedLayout/SharedLayout.jsx";
 import { PrivateRoute } from "./PrivateRoute.jsx";
@@ -11,9 +10,14 @@ const Favorites = lazy(() => import("../pages/Favorites/Favorites.jsx"));
 const App = () => {
   const location = useLocation();
 
-  if (location.pathname === "/") {
-    location.pathname = "/home";
-  }
+  useEffect(() => {
+    if (location.pathname === "/") {
+      location.pathname = "/home";
+    }
+    if (location.pathname === "/favorites") {
+      localStorage.setItem("lastPath", location.pathname);
+    }
+  }, [location.pathname]);
 
   return (
     <>
@@ -24,7 +28,10 @@ const App = () => {
           <Route
             path="favorites"
             element={
-              <PrivateRoute redirectTo="/home" component={<Favorites />} />
+              <PrivateRoute
+                redirectTo="/home"
+                component={<Favorites />}
+              />
             }
           />
         </Route>
