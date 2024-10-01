@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import TeacherItem from "../TeacherItem/TeacherItem";
+import TeacherItem from "../TeacherItem/TeacherItem.jsx";
 import { getAllTeachers } from "../../../firebase/api";
 import NoFindTeacher from "../NoFindTeacher/NoFindTeacher";
 import { List, ShowMoreBtn } from "./ListTeachers.styled";
