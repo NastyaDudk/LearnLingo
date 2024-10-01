@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
 
-const API_KEY = import.meta.env.VITE_API_KEY;
+const API_KEY = "AIzaSyAXOHSnwXDXyo08kuoU4yEaQGLMAoHlhNo";
 const AUTH_DOMAIN = import.meta.env.VITE_AUTH_DOMAIN;
 const STORAGE_BUCKET = import.meta.env.VITE_STORAGE_BUCKET;
 const MESSAGING_SENDER_ID = import.meta.env.VITE_MESSAGING_SENDER_ID;
